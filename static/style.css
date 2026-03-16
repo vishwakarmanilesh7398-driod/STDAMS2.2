@@ -1,7 +1,7 @@
 body {
     background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
     min-height: 100vh;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI',Calibri, sans-serif;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -63,8 +63,8 @@ body {
     box-shadow: 0 0 18px #ffe600;
 }
 .card-normal {
-    border: 2px solid #00ffe7;
-    box-shadow: 0 0 12px #00ffe7;
+    border: 3px solid #5d00ff;
+    box-shadow: 0 0 12px #fff200;
 }
 .status-normal {
     color: #00ffe7;
@@ -111,5 +111,5 @@ footer {
 }
 ::-webkit-scrollbar-thumb {
     background: #222b3a;
-    border-radius: 8px;
+    border-radius: 10px;
 }
