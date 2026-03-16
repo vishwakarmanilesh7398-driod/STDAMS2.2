@@ -12,7 +12,7 @@ DATA_FILE = 'data/satellite.csv'
 # Initial normal values
 ALTITUDE = 400  # km
 VELOCITY = 7.8  # km/s
-SIGNAL = 95     # %
+SIGNAL = 90    # %
 
 
 def generate_telemetry():
@@ -24,15 +24,18 @@ def generate_telemetry():
     SIGNAL += random.uniform(-0.2, 0.2)
 
     # Inject anomaly randomly
-    anomaly = random.random() < 0.15  # 15% chance
+    anomaly = random.random() < 0.20  # Chance thoda badha kar 20% kar di
     if anomaly:
+        print("!!! ANOMALY DETECTED !!!") # Terminal mein check karne ke liye
         anomaly_type = random.choice(['altitude', 'velocity', 'signal'])
         if anomaly_type == 'altitude':
-            ALTITUDE += random.uniform(-5, 5)
+            # 5 ki jagah 15-20 ka jump dein taaki graph upar bhage
+            ALTITUDE += random.choice([-20, 20]) 
         elif anomaly_type == 'velocity':
-            VELOCITY += random.uniform(-0.5, 0.5)
+            VELOCITY += random.choice([-0.8, 0.8])
         elif anomaly_type == 'signal':
-            SIGNAL += random.uniform(-10, 10)
+            # Signal ko ekdum gira dein (Critical warning ke liye)
+            SIGNAL -= random.uniform(20, 30)
 
     # Clamp values
     ALTITUDE = max(350, min(ALTITUDE, 450))
